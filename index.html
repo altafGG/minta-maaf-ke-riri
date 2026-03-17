@@ -50,7 +50,7 @@
             cursor: pointer;
             transition: all 0.2s ease;
             font-size: 1rem;
-            touch-action: manipulation; /* Optimasi HP */
+            touch-action: manipulation;
         }
 
         #btnIya {
@@ -79,7 +79,6 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Animasi Hati Kecil */
         .heart {
             position: absolute;
             color: #f06292;
@@ -107,7 +106,7 @@
     <div id="pesanPage" class="container hidden">
         <div class="pesan-akhir">
             <h1>Yeeey! Makasih Riri! ❤️</h1>
-            <p> yeyeyey Makasih ya udah maaafin aku sayangku. Aku janji ke depannya aku bakal lebih sering ngabarin kamu, aku minta maaf ya untuk hari ini lupa ngabarin kamu, jadinya kamu nunggu lama banget, maaf ya sayangkuu.</p>
+            <p>Makasih ya udah maafin aku sayangku. Aku janji ke depannya aku bakal lebih sering ngabarin kamu. Maaf ya untuk hari ini lupa ngabarin kamu, jadinya kamu nunggu lama banget. Maaf ya sayangkuu.</p>
             <p style="font-size: 0.9rem; color: #d81b60;"><i>"You're the best, Ri!"</i></p>
         </div>
     </div>
@@ -126,25 +125,18 @@
         }
         setInterval(createHeart, 400);
 
-        // Logika Tombol "Tidak" Kabur
-        function pindahTombol() {
-           // Logika Tombol "Tidak" Kabur (Sekitar posisi semula)
+        // Fungsi pindah tombol yang sudah diperbaiki
         function pindahTombol() {
             const btn = document.getElementById('btnTidak');
-            
-            // Tentukan jarak maksimal perpindahan (misal 100 pixel)
             const jarakMaks = 100; 
-            
-            // Hitung angka acak antara -jarakMaks sampai +jarakMaks
             const randomX = (Math.random() - 0.5) * 2 * jarakMaks;
             const randomY = (Math.random() - 0.5) * 2 * jarakMaks;
 
-            // Terapkan perpindahan menggunakan transform agar lebih smooth
             btn.style.transition = "transform 0.2s ease";
             btn.style.transform = `translate(${randomX}px, ${randomY}px)`;
         }
 
-        // Logika Tampilkan Pesan
+        // Fungsi tampilkan pesan
         function tampilkanPesan() {
             document.getElementById('quizPage').classList.add('hidden');
             document.getElementById('pesanPage').classList.remove('hidden');
