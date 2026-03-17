@@ -107,7 +107,7 @@
     <div id="pesanPage" class="container hidden">
         <div class="pesan-akhir">
             <h1>Yeeey! Makasih Riri! ❤️</h1>
-            <p>Aku tau kamu baik banget. Makasih ya udah dimaafin. Janji deh ke depannya aku bakal lebih sabar dan bikin kamu senyum terus.</p>
+            <p> yeyeyey Makasih ya udah maaafin aku sayangku. Aku janji ke depannya aku bakal lebih sering ngabarin kamu, aku minta maaf ya untuk hari ini lupa ngabarin kamu, jadinya kamu nunggu lama banget, maaf ya sayangkuu.</p>
             <p style="font-size: 0.9rem; color: #d81b60;"><i>"You're the best, Ri!"</i></p>
         </div>
     </div>
@@ -128,14 +128,20 @@
 
         // Logika Tombol "Tidak" Kabur
         function pindahTombol() {
+           // Logika Tombol "Tidak" Kabur (Sekitar posisi semula)
+        function pindahTombol() {
             const btn = document.getElementById('btnTidak');
-            // Menghitung posisi random dalam batas layar
-            const x = Math.random() * (window.innerWidth - btn.offsetWidth);
-            const y = Math.random() * (window.innerHeight - btn.offsetHeight);
             
-            btn.style.position = 'fixed';
-            btn.style.left = x + 'px';
-            btn.style.top = y + 'px';
+            // Tentukan jarak maksimal perpindahan (misal 100 pixel)
+            const jarakMaks = 100; 
+            
+            // Hitung angka acak antara -jarakMaks sampai +jarakMaks
+            const randomX = (Math.random() - 0.5) * 2 * jarakMaks;
+            const randomY = (Math.random() - 0.5) * 2 * jarakMaks;
+
+            // Terapkan perpindahan menggunakan transform agar lebih smooth
+            btn.style.transition = "transform 0.2s ease";
+            btn.style.transform = `translate(${randomX}px, ${randomY}px)`;
         }
 
         // Logika Tampilkan Pesan
